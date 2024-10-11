@@ -71,6 +71,22 @@ void zaidimas()
     }
 }
 
+void fizzbuzz(int n)
+{
+    for (int i = 1; i <= n; ++i)
+    {
+        cout << "Skaičius: " << i << '\t';
+
+        if (i % 3 == 0)
+            cout << "Fizz";
+
+        if (i % 5 == 0)
+            cout << "Buzz";
+
+        cout << '\n';
+    }
+}
+
 int main()
 {
     cout << boolalpha;
@@ -102,8 +118,13 @@ int main()
             zaidimas();
             break;
         case 4:
-
+        {
+            int num = 0;
+            cout << "\nĮveskite teigiamą sveikąjį skaičių:";
+            cin >> num;
+            fizzbuzz(num);
             break;
+        }
         default:
             cout << "\nKlaida: Neteisingas pasirinkimas.\n";
             break;
