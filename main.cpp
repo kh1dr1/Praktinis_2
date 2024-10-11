@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
@@ -44,9 +45,37 @@ int gcd(int a, int b)
     return a;
 }
 
+int random_number(int min, int max)
+{
+    return rand() % (max - min + 1) + min;
+}
+
+void zaidimas()
+{
+    int secret_number = random_number(1, 100);
+    int guess = 0;
+
+    cout << '\n';
+
+    while (guess != secret_number)
+    {
+        cout << "Įveskite skaičių (nuo 1 iki 100):";
+        cin >> guess;
+
+        if (guess == secret_number)
+            cout << "Atsakymas teisingas!\n";
+        else if (guess < secret_number)
+            cout << "Įvestas per mažas skaičius...\n";
+        else if (guess > secret_number)
+            cout << "Įvestas per didelis skaičius...\n";
+    }
+}
+
 int main()
 {
     cout << boolalpha;
+
+    srand(time(NULL));
 
     bool running = true;
 
@@ -70,7 +99,7 @@ int main()
             cout << "Didžiausias bendras daliklis: " << gcd(num1, num2) << '\n';
             break;
         case 3:
-
+            zaidimas();
             break;
         case 4:
 
