@@ -33,6 +33,17 @@ bool ar_balsis(char raide)
     return balsis;
 }
 
+int gcd(int a, int b)
+{
+    while (b != 0)
+    {
+        int t = b;
+        b = a % b;
+        a = t;
+    }
+    return a;
+}
+
 int main()
 {
     cout << boolalpha;
@@ -53,7 +64,10 @@ int main()
             cout << "Ar balsė? " << ar_balsis(raide) << '\n';
             break;
         case 2:
-
+            int num1, num2;
+            cout << "\nĮveskite 2 skaičius:";
+            cin >> num1 >> num2;
+            cout << "Didžiausias bendras daliklis: " << gcd(num1, num2) << '\n';
             break;
         case 3:
 
